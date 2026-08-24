@@ -2,12 +2,24 @@ name: Demo-1
 on: workflow_dispatch
 
 jobs:
- job-1:
-  runs-on: ubuntu-latest
 
+ Code:
+  runs-on: ubuntu-latest
   steps:
     - name: Code
-      run: | 
-       echo "step1"
-       echo "step2"
-       echo "step3"
+      run: echo "Code pulled successfully"
+      
+ Build:
+   runs-on: ubuntu-latest
+   needs: Code
+   steps:
+    - name: Build stage
+      run: echo "Build completed"
+
+ test:
+  runs-on: ubuntu-latest
+  needs: Build
+  steps:
+    - name: test stage
+      run: "test completed"
+       
