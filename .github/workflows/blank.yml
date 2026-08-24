@@ -1,0 +1,10 @@
+name: Demo-1
+on: workflow_dispatch
+
+jobs:
+ job-1:
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: Code
+      run: echo "Welcome to gha demo"
