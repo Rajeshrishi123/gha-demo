@@ -9,13 +9,13 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: variables
-      run: echo "Hello {{ var.USER_NAME }}"
+      run: echo "Hello ${{ vars.USER_NAME }}"
       
  secrets:
    runs-on: ubuntu-latest
    steps:
     - name: secrets
-      run: echo "Password is {{ secrets.USER_PWD }}"
+      run: echo "Password is ${{ secrets.USER_PWD }}"
 
  
        
