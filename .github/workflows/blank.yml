@@ -5,9 +5,14 @@ on:
       - main
       - dev
       - test
-  pull-requests:
+  pull-request:
     branches:
       - main
+  merge-request:
+    branches:
+      - main
+
+
 
 jobs:
 
