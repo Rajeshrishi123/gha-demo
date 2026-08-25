@@ -5,10 +5,10 @@ on:
       - main
       - dev
       - test
-  pull-request:
+  pull_request:
     branches:
       - main
-  merge-request:
+  merge_request:
     branches:
       - main
 
