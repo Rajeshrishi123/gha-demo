@@ -1,38 +1,21 @@
 name: Demo-1
-on:
-  push:
-    branches:
-      - main
-      - dev
-      - test
-  pull_request:
-    branches:
-      - main
-    types:
-      - closed
- 
+on: push
 
 
 
 jobs:
 
- Code:
+ vars:
   runs-on: ubuntu-latest
   steps:
-    - name: Code
-      run: echo "Code pulled successfully"
+    - name: variables
+      run: echo "Hello {{ var.USER_NAME }}"
       
- Build:
+ secrets:
    runs-on: ubuntu-latest
-   needs: Code
    steps:
-    - name: Build stage
-      run: echo "Build completed"
+    - name: secrets
+      run: echo "Password is {{ secrets.USER_PWD }}"
 
- test:
-  runs-on: ubuntu-latest
-  needs: Build
-  steps:
-    - name: test stage
-      run: "test completed"
+ 
        
